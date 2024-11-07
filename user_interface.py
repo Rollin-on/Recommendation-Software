@@ -1,7 +1,7 @@
 
-#Greets user and directs user input
-import recipe_book 
 
+import recipe_book 
+#Greeting
 def greeting():
     print('______________________________________________________________')
     print("**************************************************************")
@@ -21,7 +21,7 @@ def cuisine_type():
     food = input("Please enter the type of cuisine you would like to cook. This can be the full word, or the first few letters, or you may also press enter to view all recipes: ").lower()
     return food
 
- #Display Recipes, then display recipes based upon search
+ #Display Recipes, User Chooses Which To View
 def display_recipes(cuisine_recipes):
     if not cuisine_recipes:
         print("Sorry there are no recipes that match your choice.")
@@ -39,7 +39,7 @@ def display_recipes(cuisine_recipes):
                     print_recipes_details(recipe)
                 
                 
-
+#Formating Recipe Data Print Statement
 def print_recipes_details(recipe):
     print(f"\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
     print(f"{recipe["Recipe"]}")
@@ -48,7 +48,7 @@ def print_recipes_details(recipe):
     print(f"Ingredients: {recipe["Ingredients"]}")
     print(f"\nInstructions: {recipe["Instructions"]}")
     print(f"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-
+#Again?
 def second_search():
     again = input("Would you like to search another cuisine? ").lower()
     if again == "yes":
@@ -68,7 +68,9 @@ def main():
     
     while True:
         cuisine = cuisine_type()
+        #Search
         cuisine_recipes = recipe_book.trie.search(cuisine)
+        #Again? No? Then Break
         display_recipes(cuisine_recipes)
         if not second_search():
             break
