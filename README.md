@@ -2,22 +2,20 @@
 This program is designed to allow the user to search for a recipe they would like to cook based on their desired cuisine in our Cookbook.
 
 The purpose of this program technically was to demonstrate usage and understanding of the following skills/data structures; Trie Data Structure, DFS, DictReader, Iteration, Dictionaries, Lists, Parsing, User Input, Print statement formating, and readability.
-
-recipes_data.csv
 ________________
-Holds the data for Cookbook project in CSV format
+recipes_data.csv
 
-recipe_book.py
+Holds the data for Cookbook project in CSV format
 ______________
+recipe_book.py
 
 This file holds the Trie structure, in this case the Trie structure saves the first character from the "Cuisine" value as a branch of the root node. Each following character in each word continues in a horizontal fashion until the last letter of the word has been reached. The final node of each branch holds a list of dictionaries that contain the associated cuisine spelled out by its branch. At this point a full cuisine name must be entered for the search.
 
 A DFS algorithm is used to complete the prefix search. The DFS function takes over from where the search left off, traverses to the end of the branch, and appends the found data to the end of the result list located within the search function. 
 
 The last function in this file parses the data in our recipes_data.csv, and instantiates a Trie to load the data into
-
-user_interface.py
 _________________
+user_interface.py
 
 Contained within this file is a greeting that is initialized when the file is ran.
 
